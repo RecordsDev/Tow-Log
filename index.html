@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NBPD Tow Log</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="src/styles.css">
 </head>
 <body>
     <button id="homeButton" onclick="showSection('main')">
@@ -137,10 +137,12 @@
     <div id="policeTowForm" class="form-container">
         <h2>Police Tow Form</h2>
         <form onsubmit="submitForm('policeTow', event)">
-            <!-- Police Tow form fields remain unchanged -->
+            <!-- Police Tow form fields go here -->
         </form>
     </div>
 
-    <script src="scripts.js"></script>
+    <script src="src/helpers.js"></script>
+    <script src="src/svsParser.js"></script>
+    <script src="src/main.js"></script>
 </body>
 </html>
