@@ -7,6 +7,13 @@ function showSection(sectionId) {
     if (sectionId === 'main') {
         document.getElementById('mainContent').style.display = 'block';
     } else {
+        const formContainer = document.getElementById(sectionId + 'Form');
+        if (!formContainer) {
+            const newFormContainer = document.createElement('div');
+            newFormContainer.id = sectionId + 'Form';
+            newFormContainer.innerHTML = window[sectionId + 'Screen'];
+            document.body.appendChild(newFormContainer);
+        }
         document.getElementById(sectionId + 'Form').style.display = 'block';
     }
 }
@@ -20,9 +27,6 @@ function submitForm(formType, event) {
     entry.className = 'entry';
 
     for (let [key, value] of formData.entries()) {
-        if (key === 'hold') {
-            value = value === 'on' ? 'Yes' : 'No';
-        }
         const p = document.createElement('p');
         p.textContent = `${key}: ${value}`;
         entry.appendChild(p);
