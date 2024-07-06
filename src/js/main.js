@@ -7,6 +7,13 @@ function showSection(sectionId) {
     if (sectionId === 'main') {
         document.getElementById('mainContent').style.display = 'block';
     } else {
+        const formContainer = document.getElementById(sectionId + 'Form');
+        if (!formContainer) {
+            const newFormContainer = document.createElement('div');
+            newFormContainer.id = sectionId + 'Form';
+            newFormContainer.innerHTML = window[sectionId + 'Screen'];
+            document.body.appendChild(newFormContainer);
+        }
         document.getElementById(sectionId + 'Form').style.display = 'block';
     }
 }
