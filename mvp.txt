@@ -1,0 +1,23 @@
+police tow info
+    veh info
+        plate
+        vin
+        make
+        model
+        year
+        color
+    DR
+    date/time
+    reason
+    tow co
+    notes
+    hold
+
+2 column view screen
+
+2 add buttons
+
+search function
+
+delete function
+
