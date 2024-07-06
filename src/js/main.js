@@ -1,20 +1,25 @@
 // Function to show the specified section and hide others
 function showSection(sectionId) {
-    document.getElementById('mainContent').style.display = 'none';
-    document.getElementById('ppiRepoForm').style.display = 'none';
-    document.getElementById('policeTowForm').style.display = 'none';
+    const mainContent = document.getElementById('mainContent');
+    const ppiRepoForm = document.getElementById('ppiRepoForm');
+    const policeTowForm = document.getElementById('policeTowForm');
+
+    // Hide all sections
+    mainContent.style.display = 'none';
+    if (ppiRepoForm) ppiRepoForm.style.display = 'none';
+    if (policeTowForm) policeTowForm.style.display = 'none';
 
     if (sectionId === 'main') {
-        document.getElementById('mainContent').style.display = 'block';
+        mainContent.style.display = 'block';
     } else {
-        const formContainer = document.getElementById(sectionId + 'Form');
+        let formContainer = document.getElementById(sectionId + 'Form');
         if (!formContainer) {
-            const newFormContainer = document.createElement('div');
-            newFormContainer.id = sectionId + 'Form';
-            newFormContainer.innerHTML = window[sectionId + 'Screen'];
-            document.body.appendChild(newFormContainer);
+            formContainer = document.createElement('div');
+            formContainer.id = sectionId + 'Form';
+            formContainer.innerHTML = window[sectionId + 'Form'];
+            document.body.appendChild(formContainer);
         }
-        document.getElementById(sectionId + 'Form').style.display = 'block';
+        formContainer.style.display = 'block';
     }
 }
 
