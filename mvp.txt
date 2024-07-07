@@ -10,27 +10,19 @@ fi: ganon U11
 
 
 
+frontend:
 
-police tow info
-    veh info
-        plate
-        vin
-        make
-        model
-        year
-        color
-    DR
-    date/time
-    reason
-    tow co
-    notes
-    hold
+shortened display
+clickable rows > takes you to modify screen
+search
 
-2 column view screen
 
-2 add buttons
 
-search function
+backend:
 
-delete function
+create
+search
+update
+delete
 
+live updates
