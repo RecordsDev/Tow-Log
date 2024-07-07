@@ -11,6 +11,7 @@ function showSection(sectionId) {
 
     if (sectionId === 'main') {
         mainContent.style.display = 'block';
+        fetchPoliceTows(); // Fetch and display police tows when showing main section... will fetch every return to home screen
     } else {
         let formContainer = document.getElementById(sectionId + 'Form');
         if (!formContainer) {
@@ -58,5 +59,48 @@ function updateTowCompanyInfo() {
     }
 }
 
+async function fetchPoliceTows() {
+    try {
+        const response = await fetch('https://towlog.000webhostapp.com/fetch_data.php');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log(data);
+        if (Array.isArray(data)) {
+            displayPoliceTows(data);
+        } else if (data.error) {
+            console.error('Server error:', data.error);
+        } else {
+            console.error('Unexpected data format:', data);
+        }
+    } catch (error) {
+        console.error('Error fetching police tows:', error);
+    }
+}
+
+function displayPoliceTows(tows) {
+    const logsContainer = document.getElementById('policeTowLogs');
+    logsContainer.innerHTML = ''; // Clear existing entries
+
+    tows.forEach(tow => {
+        const entry = document.createElement('div');
+        entry.className = 'entry';
+        entry.innerHTML = `
+            <p><strong>Date:</strong> ${tow.date}</p>
+            <p><strong>DR:</strong> ${tow.dr}</p>
+            <p><strong>Make:</strong> ${tow.make}</p>
+            <p><strong>Model:</strong> ${tow.model}</p>
+            <p><strong>License:</strong> ${tow.lic_plate} (${tow.lic_state})</p>
+            <p><strong>Reason:</strong> ${tow.tow_reason}</p>
+            <p><strong>Tow Company:</strong> ${tow.tow_company_name}</p>
+        `;
+        logsContainer.appendChild(entry);
+    });
+}
+
 // Show main content by default
 showSection('main');
+
+// Call fetchPoliceTows when the page loads
+document.addEventListener('DOMContentLoaded', fetchPoliceTows);
