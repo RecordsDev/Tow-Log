@@ -1,0 +1,54 @@
+Police Tow fields:
+--------
+[id]
+
+Lic Plate
+Lic State (2 letter state code dropdown)
+VIN
+Make
+Model
+Year
+Color
+
+DR (8 digit number)
+Date
+Reason (combo box)
+Tow Company (combo box)
+Notes (free form text)
+Evidence hold (boolean)
+30 day hold (boolean)
+Released (checkbox/boolean)
+
+
+
+
+
+
+
+
+
+
+PPI/Repo fields:
+--------
+[id]
+
+Lic Plate
+Lic State (2 letter state code dropdown)
+VIN
+Make
+Model
+Year
+Color
+
+PPI/Repo (checkbox/boolean)
+Vol/Invol (checkbox/boolean)
+Date
+Time of tow
+Time called in
+Location (free form text)
+Tow Company (combo box)
+Tow requested by (free form text)
+Phone number
+Repo caller (free form text)
+Employee ID (free form text)
+Notes (free form text)

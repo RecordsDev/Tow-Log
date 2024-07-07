@@ -1,6 +1,6 @@
 window.policeTowForm = `
     <div id="policeTowForm" class="form-container">
-        <h2>Police Tow Form</h2>
+        <h2>Add Police Tow</h2>
         <form onsubmit="submitForm('policeTow', event)">
             <div class="form-row">
                 <div class="form-group">

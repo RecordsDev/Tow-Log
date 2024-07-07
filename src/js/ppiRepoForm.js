@@ -1,5 +1,6 @@
 window.ppiRepoForm = `
     <div id="ppiRepoForm" class="form-container">
+        <h2>Add PPI/Repo</h2>
         <form onsubmit="submitForm('ppiRepo', event)">
             <div class="form-row">
                 <div class="form-group">
