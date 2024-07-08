@@ -76,41 +76,87 @@ async function fetchTowData() {
 function displayPoliceTows(tows) {
     const logsContainer = document.getElementById('policeTowLogs');
     logsContainer.innerHTML = ''; // Clear existing entries
-    tows.forEach(tow => {
-        const entry = document.createElement('div');
-        entry.className = 'entry';
-        entry.innerHTML = `
-            <p><strong>Date:</strong> ${tow.date}</p>
-            <p><strong>DR:</strong> ${tow.dr}</p>
-            <p><strong>Make:</strong> ${tow.make}</p>
-            <p><strong>Model:</strong> ${tow.model}</p>
-            <p><strong>License:</strong> ${tow.lic_plate} (${tow.lic_state})</p>
-            <p><strong>Reason:</strong> ${tow.tow_reason}</p>
-            <p><strong>Tow Company:</strong> ${tow.tow_company_name}</p>
-        `;
-        logsContainer.appendChild(entry);
+
+    // Create table
+    const table = document.createElement('table');
+    table.className = 'tow-table';
+
+    // Create header
+    const header = table.createTHead();
+    const headerRow = header.insertRow();
+    const headers = ['Date', 'DR', 'Make', 'Model', 'Color', 'Reason', 'Tow Company', 'Hold'];
+    headers.forEach(text => {
+        const th = document.createElement('th');
+        th.textContent = text;
+        headerRow.appendChild(th);
     });
+
+    // Create table body
+    const tbody = table.createTBody();
+    tows.forEach(tow => {
+        const row = tbody.insertRow();
+        row.innerHTML = `
+            <td>${tow.date}</td>
+            <td>${tow.dr}</td>
+            <td>${tow.make}</td>
+            <td>${tow.model}</td>
+            <td>${tow.color}</td>
+            <td>${tow.tow_reason}</td>
+            <td>${tow.tow_company_name}</td>
+            <td>${tow.evidence_hold ? 'Yes' : 'No'}</td>
+        `;
+        // Add click event listener for future edit functionality
+        row.addEventListener('click', () => {
+            // Placeholder for future edit functionality
+            console.log('Edit police tow:', tow);
+        });
+    });
+
+    logsContainer.appendChild(table);
 }
 
 function displayPPIRepoTows(tows) {
     const logsContainer = document.getElementById('ppiRepoLogs');
     logsContainer.innerHTML = ''; // Clear existing entries
-    tows.forEach(tow => {
-        const entry = document.createElement('div');
-        entry.className = 'entry';
-        entry.innerHTML = `
-            <p><strong>Date:</strong> ${tow.date}</p>
-            <p><strong>Time:</strong> ${tow.time_of_tow}</p>
-            <p><strong>Type:</strong> ${tow.is_ppi ? 'PPI' : 'Repo'}</p>
-            <p><strong>Voluntary:</strong> ${tow.is_voluntary ? 'Yes' : 'No'}</p>
-            <p><strong>Make:</strong> ${tow.make}</p>
-            <p><strong>Model:</strong> ${tow.model}</p>
-            <p><strong>License:</strong> ${tow.lic_plate} (${tow.lic_state})</p>
-            <p><strong>Location:</strong> ${tow.location}</p>
-            <p><strong>Tow Company:</strong> ${tow.tow_company_name}</p>
-        `;
-        logsContainer.appendChild(entry);
+
+    // Create table
+    const table = document.createElement('table');
+    table.className = 'tow-table';
+
+    // Create header
+    const header = table.createTHead();
+    const headerRow = header.insertRow();
+    const headers = ['Date', 'Time', 'Location', 'Make', 'Model', 'Color', 'License', 'State', 'Type', 'Tow Company'];
+    headers.forEach(text => {
+        const th = document.createElement('th');
+        th.textContent = text;
+        headerRow.appendChild(th);
     });
+
+    // Create table body
+    const tbody = table.createTBody();
+    tows.forEach(tow => {
+        const row = tbody.insertRow();
+        row.innerHTML = `
+            <td>${tow.date}</td>
+            <td>${tow.time_of_tow}</td>
+            <td>${tow.location}</td>
+            <td>${tow.make}</td>
+            <td>${tow.model}</td>
+            <td>${tow.color}</td>
+            <td>${tow.lic_plate}</td>
+            <td>${tow.lic_state}</td>
+            <td>${tow.is_ppi ? 'PPI' : 'Repo'}</td>
+            <td>${tow.tow_company_name}</td>
+        `;
+        // Add click event listener for future edit functionality
+        row.addEventListener('click', () => {
+            // Placeholder for future edit functionality
+            console.log('Edit PPI/Repo tow:', tow);
+        });
+    });
+
+    logsContainer.appendChild(table);
 }
 
 // Show main content by default

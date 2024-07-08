@@ -32,3 +32,92 @@
     border-radius: 4px;
     font-size: 14px;
 }
+
+.tow-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.tow-table th, .tow-table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tow-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tow-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tow-table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+    .tow-table {
+        font-size: 14px;
+    }
+
+    .tow-table th, .tow-table td {
+        padding: 5px;
+    }
+}
+
+.tow-logs-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.tow-log-column {
+    flex: 1 1 calc(50% - 10px);
+    min-width: 300px;
+}
+
+/* Styles for the tow table */
+.tow-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.tow-table th, .tow-table td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.tow-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.tow-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.tow-table tr:hover {
+    background-color: #f5f5f5;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+    .tow-log-column {
+        flex: 1 1 100%;
+    }
+
+    .tow-table {
+        font-size: 12px;
+    }
+
+    .tow-table th, .tow-table td {
+        padding: 6px;
+    }
+}

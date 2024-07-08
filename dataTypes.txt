@@ -52,3 +52,34 @@ Phone number
 Repo caller (free form text)
 Employee ID (free form text)
 Notes (free form text)
+
+
+
+
+
+
+awesome. now i want to change how the tow data is displayed on the view screen.
+
+at the moment, it displays most if not all of the data on the view screen. instead, i only want to display a row of some of the data which i will specify for you shortly. but, please note that in the future, i will want to make each row clickable and have it take the user to the same add screen that already exists, but with the data filled in already with the row that they clicked, so that they can edit that information. for now, though, let's just edit the display to display the following data fields in a row (by the way, please edit the display columns to take advantage of the full horizontal screen space as it is currently pretty narrow):
+
+PPIs/Repos, display:
+date
+time of tow
+location
+make
+model
+color
+license plate
+license state
+ppi/repo
+tow company
+
+Police tows, display:
+date
+DR
+make
+model
+color
+tow reason
+tow company
+hold
