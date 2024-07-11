@@ -1,7 +1,8 @@
 window.ppiRepoForm = `
     <div id="ppiRepoForm" class="form-container">
-        <h2>Add PPI/Repo</h2>
+        <h2>Add/Edit PPI/Repo</h2>
         <form onsubmit="submitForm('ppiRepo', event)">
+            <input type="hidden" id="ppr-id" name="id">
             <div class="form-row">
                 <div class="form-group">
                     <label for="date">Date:</label>
@@ -60,12 +61,11 @@ window.ppiRepoForm = `
             </div>
             <div class="form-row">
                 <div class="form-group wide-input">
-                    <label for="towCompany">Tow Company:</label>
-                    <select id="towCompany" name="towCompany" onchange="updateTowCompanyInfo()" required>
-                        <option value="">Select a tow company</option>
-                        <option value="G&W Towing">G&W Towing</option>
-                        <option value="Southside Towing">Southside Towing</option>
-                    </select>
+    <label for="towCompany">Tow Company:</label>
+    <select id="towCompany" name="towCompany" required>
+        <option value="">Select a tow company</option>
+        <!-- Options will be populated dynamically -->
+    </select>
                     <div id="towCompanyInfo"></div>
                 </div>
             </div>

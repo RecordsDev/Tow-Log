@@ -1,7 +1,8 @@
 window.policeTowForm = `
     <div id="policeTowForm" class="form-container">
-        <h2>Add Police Tow</h2>
+        <h2>Add/Edit Police Tow</h2>
         <form onsubmit="submitForm('policeTow', event)">
+            <input type="hidden" id="pt-id" name="id">
             <div class="form-row">
                 <div class="form-group">
                     <label for="pt-dr">DR (Case Number):</label>
@@ -24,14 +25,13 @@ window.policeTowForm = `
                         <option value="Traffic Hazard">
                     </datalist>
                 </div>
-                <div class="form-group">
-                    <label for="pt-towCompany">Tow Company:</label>
-                    <select id="pt-towCompany" name="towCompany" required>
-                        <option value="">Select a tow company</option>
-                        <option value="G&W Towing">G&W Towing</option>
-                        <option value="Southside Towing">Southside Towing</option>
-                    </select>
-                </div>
+<div class="form-group">
+    <label for="pt-towCompany">Tow Company:</label>
+    <select id="pt-towCompany" name="pt-towCompany" required>
+        <option value="">Select a tow company</option>
+        <!-- Options will be populated dynamically -->
+    </select>
+</div>
             </div>
             <div class="form-row">
                 <div class="form-group">

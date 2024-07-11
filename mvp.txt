@@ -3,10 +3,18 @@ fi: ganon U11
     1NUIgErBvhPHY
 
 
+
 00: ganon U11!
     towlogadmin id22417332_towlogadmin
     host: localhost
     K%7zgK7KaP8M|]}0
+
+
+
+as: ganon U11
+    4502724_towlog
+    host: fdb1029.awardspace.net
+    y.Abki[j5yaQ6:df
 
 
 
@@ -24,5 +32,7 @@ create
 search
 update
 delete
+
+
 
 live updates
