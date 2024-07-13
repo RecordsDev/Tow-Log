@@ -34,7 +34,7 @@ async function submitForm(formType, event) {
   const formData = new FormData(form);
   const id = formData.get("id");
 
-  let url = "http://towlog.atwebpages.com/";
+  let url = "https://towlog.atwebpages.com/";
   if (formType === "policeTow") {
     url += id ? "update_police_tow.php" : "add_police_tow.php";
   } else if (formType === "ppiRepo") {
@@ -250,7 +250,7 @@ async function fetchTowCompanies() {
     // Only fetch if we haven't already
     try {
       const response = await fetch(
-        "http://towlog.atwebpages.com/fetch_tow_companies.php"
+        "https://towlog.atwebpages.com/fetch_tow_companies.php"
       );
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
